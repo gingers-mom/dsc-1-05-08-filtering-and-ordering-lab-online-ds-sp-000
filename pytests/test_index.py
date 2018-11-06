@@ -15,6 +15,7 @@ table = sql_runner.execute_seed_file()
 def test_conda_environment_activated():
     assert importlib.util.find_spec("obscure"), "It looks like you didn't 'conda activate learn-env' - try that then run the test again!"
 
+
 def test_select_all_female_dogs_name_and_breed():
     result = [('Little Ann', 'coonhound'), ('Pickles', 'black lab'), ('Lassie', 'collie'), ('Snowy', 'fox terrier')]
     assert table.execute(select_all_female_dogs_name_and_breed()).fetchall() == result
